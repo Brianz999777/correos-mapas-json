@@ -3349,105 +3349,80 @@ function SiemprePensandoEnTi() {
   }
 }
 
-function SiemprePensandoEnTi2() {
+function SiemprePensandoEnTi2() {  
   return {
-    view: () => [
-      /* m(
-        "div",
+
+    model:{
+      items:[
         {
-          style: {
-            display: "flex",
-            width: "100%",
-            height: "500px",
-            border: "2px solid red",
-          },
+          titulo:"titulo",
+          img:"xxx",
+          texto:"xxxx"
+        },
+        {
+          titulo:"titulo",
+          img:"yyy",
+          texto:"yyy"
+        },
+        {
+          titulo:"titulo",
+          img:"yyy",
+          texto:"yyy"
+        },
+      ]
+
+    },
+    view: () => [
+      /* m( "div", {
+          style: { display: "flex", width: "100%", height: "500px", border: "2px solid red", },
         },
 
         m("div", {
-          style: {
-            width: "30px",
-            height: "40px",
-            border: "2px solid blue",
+          style: { width: "30px", height: "40px", border: "2px solid blue",
           },
         })
       ), */
 
       //padre1
-      m(
-        "div",
-        {
+      m("section",{
           style: {
-            display: "flex",
-            "flex-wrap": "wrap",
-            "justify-content": "space-between",
-            border: "2px solid gray",
-            margin: "50px auto",
-            height: "500px",
-            width: "80%",
-          },
+            display: "flex", "flex-wrap": "wrap", 
+            "justify-content": "space-between", 
+            border: "2px solid gray", margin: "50px auto", height: "500px", width: "80%", },
         },
-        [
-          //padre2
-          m(
-            "div",
-            {
+          this.state.model.items.map(i=>m(Box,i)),
+      ),
+    ],
+  }
+
+  function Box(){
+    return {
+      view:({attrs})=>m("div",{
+
               style: {
-                border: "0.5px solid gray",
-                "border-radius": "5px",
-                "box-shadow": "0 0 10px lightblue",
-                width: "30%",
-                height: "400px",
-                padding: "20px",
-              },
-            },
-            [
-              //padre3
+                border: "0.5px solid gray", "flex": "0 0 400px","border-radius": "5px", "box-shadow": "0 0 10px lightblue", width: "30%", height: "400px", padding: "20px", },
+            },[
+
               m("img", {
                 style: {
-                  border: "0.5px solid gray",
-                  "border-radius": "5px",
-                  "box-shadow": "0 0 10px lightblue",
-                  width: "100%",
-                  height: "40%",
-                  "background-image": "url('img/siemprePensandoEnti2.svg')",
-                  "background-repeat": "no-repeat",
-                  "background-size": "cover",
-                  "background-position": "center",
-                },
+                  border: "0.5px solid gray", "border-radius": "5px", "box-shadow": "0 0 10px lightblue", width: "100%", height: "40%", 
+                  "background-image": `url('${attrs.img}')`, 
+                  "background-repeat": "no-repeat", "background-size": "cover", "background-position": "center", },
               }),
-              m(
-                "div",
-                {
+
+              m("div",{
                   style: {
-                    border: "0.5px solid gray",
-                    "border-radius": "5px",
-                    "box-shadow": "0 0 10px lightblue",
-                    width: "100%",
-                    height: "10%",
-                    color: "black",
-                    "font-size":"24px",
-                    "font-family":"Helvetica Neue",
-                    "font-weight":"700",
-                    "text-align": "left",
-                  },
+                    border: "0.5px solid gray", "border-radius": "5px", "box-shadow": "0 0 10px lightblue", width: "100%", height: "10%", color: "black", "font-size":"24px", "font-family":"Helvetica Neue", "font-weight":"700", "text-align": "left", },
                 },
-                "Gestión Aduanera"
+                attrs.titulo
               ),
+
               m("div", {
                 style: {
-                  border: "0.5px solid gray",
-                  "border-radius": "5px",
-                  "box-shadow": "0 0 10px lightblue",
-                  width: "100%",
-                  height: "30%",
-                  color: "black",
-                    "font-size":"16px",
-                    "font-family":"Helvetica Neue",
-                    "font-weight":"400",
-                },
+                  border: "0.5px solid gray", "border-radius": "5px", "box-shadow": "0 0 10px lightblue", width: "100%", height: "30%", color: "black", "font-size":"16px", "font-family":"Helvetica Neue", "font-weight":"400", },
               },
-              "Infórmate sobre cómo realizar los trámites aduaneros que necesitas."
-            ),
+              attrs.texto),
+
               m("div", {
                 href: "",
                 style: {
@@ -3470,11 +3445,9 @@ function SiemprePensandoEnTi2() {
               ]
             ),
             ]
-          ),
-        ]
-      ),
-    ],
-  };
+          )
+    }
+  }
 }
 
 function Page() {
