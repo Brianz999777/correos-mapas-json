@@ -3223,236 +3223,179 @@ function BoxViajaYDisfruta() {
 
 function ParatiParatuEmpresa(){
   return {
+    model:{
+      menu:[
+        {
+          title:"Para ti ",
+          children:[
+              {title:"Seguimiento de envío"},
+              {title:"Recibir"},
+              {title:"Enviar"}    
+            ]
+        },
+        {
+          title:"Para tu empresa",
+          children:[
+              {title:"Enviar"},
+              {title:"Ecommerce"},
+              {title:"Marketing"}
+            ]
+        },
+        {
+          title:"Para tu interés",
+          children:[
+              {title:"Filatelia"},
+              {title:"Correos Market"},
+              {title:"Web institucional"}
+          ]
+        }
+      ]
+    },
     view: () => [
-      m("section", {"style":{"box-sizing":"border-box","box-shadow":"rgba(0, 0, 0, 0.1) 0px -5px 20px 0px","background-color":"rgb(255, 255, 255)"}}, 
-  m("div", {"style":{"box-sizing":"border-box","max-width":"1366px","padding-left":"24px","padding-right":"24px","margin-left":"auto","margin-right":"auto","display":"block","width":"100%","padding-top":"85px","padding":"85px 24px 0px"}}, 
-    m("div", {"style":{"box-sizing":"border-box"}},
-      [
-        m("ul", {"style":{"box-sizing":"border-box","flex-wrap":"wrap","border-bottom":"1.25px solid rgb(203, 203, 203)","padding-bottom":"48px","margin-block":"0px","margin":"0px","padding":"0px 0px 48px","list-style":"outside none none","display":"flex","width":"100%","align-items":"flex-start"}},
-          [
-            m("li", {"style":{"box-sizing":"border-box","flex":"0 1 calc(25% - 10px)","margin-right":"10px","border-bottom":"0px none rgb(51, 51, 51)","padding":"0px","padding-top":"0px","width":"100%"}},
-              [
-                m("span", {"style":{"font-size":"24px","line-height":"36px","box-sizing":"border-box","color":"rgb(51, 51, 51)","font-weight":"300","display":"block","width":"100%","padding-bottom":"26px"}}, 
-                  "Para ti "
-                ),
-                m("ul", {"data-menu":"0","style":{"box-sizing":"border-box","padding-top":"0px","pointer-events":"all","height":"auto","opacity":"1","transition":"opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)","margin-block":"0px","margin":"0px","padding":"0px","list-style":"outside none none"}},
+      m("section", { "style": { "box-sizing": "border-box", "box-shadow": "rgba(0, 0, 0, 0.1) 0px -5px 20px 0px", "background-color": "rgb(255, 255, 255)" } },
+        m("div", { "style": { "box-sizing": "border-box", "max-width": "1366px", "padding-left": "24px", "padding-right": "24px", "margin-left": "auto", "margin-right": "auto", "display": "block", "width": "100%", "padding-top": "85px", "padding": "85px 24px 0px" } },
+          m("div", { "style": { "box-sizing": "border-box" } },
+            [
+              m("ul", { "style": { "box-sizing": "border-box", "flex-wrap": "wrap", "border-bottom": "1.25px solid rgb(203, 203, 203)", "padding-bottom": "48px", "margin-block": "0px", "margin": "0px", "padding": "0px 0px 48px", "list-style": "outside none none", "display": "flex", "width": "100%", "align-items": "flex-start" } },
+                [
+                  this.state.model.menu.map(i => [
+                    m("li", { "style": { "box-sizing": "border-box", "flex": "0 1 calc(25% - 10px)", "margin-right": "10px", "border-bottom": "0px none rgb(51, 51, 51)", "padding": "0px", "padding-top": "0px", "width": "100%" } },
+                      m("span", { "style": { "font-size": "24px", "line-height": "36px", "box-sizing": "border-box", "color": "rgb(51, 51, 51)", "font-weight": "300", "display": "block", "width": "100%", "padding-bottom": "26px" } },
+                        i.title
+                      ),
+                      m("ul", { "data-menu": "0", "style": { "box-sizing": "border-box", "padding-top": "0px", "pointer-events": "all", "height": "auto", "opacity": "1", "transition": "opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)", "margin-block": "0px", "margin": "0px", "padding": "0px", "list-style": "outside none none" } },
+                        [
+                          i.children.map(j => [
+                            m("li", { "style": { "box-sizing": "border-box", "padding-bottom": "20px" }, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none" },
+                              m("a", { "href": "https://www.correos.es/es/es/herramientas/localizador/envios", "target": "_self", "title": "Ir a Seguimiento de envío", "style": { "font-size": "16px", "line-height": "24px", "box-sizing": "border-box", "color": "rgb(0, 46, 109)", "text-decoration": "none solid rgb(0, 46, 109)" } },
+                                j.title
+                              )
+                            ),
+                          ]),
+
+                        ]))
+                  ]),
+
+                  m("li", { "style": { "box-sizing": "border-box", "margin-right": "0px", "flex": "0 1 calc(25% - 10px)", "border-bottom": "0px none rgb(51, 51, 51)", "padding": "0px", "width": "100%" } },
                   [
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/herramientas/localizador/envios","target":"_self","title":"Ir a Seguimiento de envío","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Seguimiento de envío"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/particulares/recibir","target":"_self","title":"Ir a Recibir","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Recibir"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"0px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/particulares/enviar","target":"_self","title":"Ir a Enviar","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Enviar"
-                      )
-                    )
-                  ]
-                )
-              ]
-            ),
-            m("li", {"style":{"box-sizing":"border-box","flex":"0 1 calc(25% - 10px)","margin-right":"10px","border-bottom":"0px none rgb(51, 51, 51)","padding":"0px","width":"100%"}},
-              [
-                m("span", {"style":{"font-size":"24px","line-height":"36px","box-sizing":"border-box","color":"rgb(51, 51, 51)","font-weight":"300","display":"block","width":"100%","padding-bottom":"26px"}}, 
-                  "Para tu empresa"
-                ),
-                m("ul", {"data-menu":"1","style":{"box-sizing":"border-box","padding-top":"0px","pointer-events":"all","height":"auto","opacity":"1","transition":"opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)","margin-block":"0px","margin":"0px","padding":"0px","list-style":"outside none none"}},
-                  [
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/empresas/enviar","target":"_self","title":"Ir a Enviar","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Enviar"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/empresas/ecommerce","target":"_self","title":"Ir a Ecommerce","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Ecommerce"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"0px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/empresas/marketing","target":"_self","title":"Ir a Marketing","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Marketing"
-                      )
-                    )
-                  ]
-                )
-              ]
-            ),
-            m("li", {"style":{"box-sizing":"border-box","flex":"0 1 calc(25% - 10px)","margin-right":"10px","border-bottom":"0px none rgb(51, 51, 51)","padding":"0px","width":"100%"}},
-              [
-                m("span", {"style":{"font-size":"24px","line-height":"36px","box-sizing":"border-box","color":"rgb(51, 51, 51)","font-weight":"300","display":"block","width":"100%","padding-bottom":"26px"}}, 
-                  "Para tu interés"
-                ),
-                m("ul", {"data-menu":"2","style":{"box-sizing":"border-box","padding-top":"0px","pointer-events":"all","height":"auto","opacity":"1","transition":"opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)","margin-block":"0px","margin":"0px","padding":"0px","list-style":"outside none none"}},
-                  [
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.es/es/es/particulares/ocio-y-viajes/sellos-y-filatelia","target":"_blank","title":"Ir a Filatelia","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Filatelia"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"20px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.market.correos.es/","target":"_blank","title":"Ir a Correos Market","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Correos Market"
-                      )
-                    ),
-                    m("li", {"style":{"box-sizing":"border-box","padding-bottom":"0px"}, "onmouseover": (e) => e.target.style.textDecoration = "underline", "onmouseout": (e) => e.target.style.textDecoration = "none"}, 
-                      m("a", {"href":"https://www.correos.com/?_ga=2.48058663.1272337042.1602486055-1925384938.1602155804","target":"_blank","title":"Ir a Web institucional","style":{"font-size":"16px","line-height":"24px","box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)"}}, 
-                        "Web institucional"
-                      )
-                    )
-                  ]
-                )
-              ]
-            ),
-            m("li", {"style":{"box-sizing":"border-box","margin-right":"0px","flex":"0 1 calc(25% - 10px)","border-bottom":"0px none rgb(51, 51, 51)","padding":"0px","width":"100%"}},
-              [
-                m("div", {"style":{"box-sizing":"border-box","padding":"0px","border-bottom":"0px none rgb(51, 51, 51)","margin-bottom":"0px"}},
-                  [
-                    m("ul", 
-                      {
-                        "data-menu": "3", 
-                        "style": {
-                          "box-sizing": "border-box",
-                          "padding-top": "0px",
-                          "pointer-events": "all",
-                          "height": "auto",
-                          "opacity": "1",
-                          "transition": "opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)",
-                          "margin-block": "0px",
-                          "margin": "0px",
-                          "padding": "0px",
-                          "list-style": "outside none none",
-                          "display": "flex",
-                          "flex-direction": "column",
-                          "align-items": "flex-start"
-                        }
-                      }, 
+                    m("div", { "style": { "box-sizing": "border-box", "padding": "0px", "border-bottom": "0px none rgb(51, 51, 51)", "margin-bottom": "0px" } },
                       [
-                        m("li", 
+                        m("ul",
                           {
+                            "data-menu": "3",
                             "style": {
                               "box-sizing": "border-box",
-                              "padding-bottom": "10px"
+                              "padding-top": "0px",
+                              "pointer-events": "all",
+                              "height": "auto",
+                              "opacity": "1",
+                              "transition": "opacity 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96), -webkit-transform 0.45s cubic-bezier(0.55, 0.05, 0.05, 0.96)",
+                              "margin-block": "0px",
+                              "margin": "0px",
+                              "padding": "0px",
+                              "list-style": "outside none none",
+                              "display": "flex",
+                              "flex-direction": "column",
+                              "align-items": "flex-start"
                             }
                           },
-                          m("img", {
-                            src: "./img/headset.svg",
-                            alt: "Imagen 1",
-                            style: {
-                              width: "40px",
-                              height: "auto",
-                              marginBottom: "8px"
-                            }
-                          })
-                        ),
-                        
-                      
-                        m("li", 
-                          {
-                            "style": {
-                              "box-sizing": "border-box",
-                              "padding-bottom": "10px"
-                            }
-                          }, 
-                          m("a", 
-                            {
-                              "href": "/es/es/atencion-al-cliente",
-                              "target": "_self",
-                              "title": "Ir a Atención al cliente",
-                              "style": {
-                                "font-size": "16px",
-                                "line-height": "24px",
-                                "box-sizing": "border-box",
-                                "color": "rgb(0, 46, 109)",
-                                "text-decoration": "none", 
-                                "cursor": "pointer",
-                              },
-                              "onmouseover": (e) => e.target.style.textDecoration = "underline",
-                              "onmouseout": (e) => e.target.style.textDecoration = "none"
-                            }, 
-                            "Atención al cliente"
-                          )
-                        ),
-                        
-                        m("div", 
-                          {
-                            "style": {
-                              "display": "flex", 
-                              "gap": "25px",
-                              "justify-content": "flex-start",
-                            }
-                          }, 
-                          
                           [
-                            
-                            m("a", { href: "https://www.facebook.com/correos.es", title: "Facebook", target: "_blank" },
-                              m("img", { src: "./img/facebook.svg", alt: "Imagen 2", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+                            m("li",
+                              {
+                                "style": {
+                                  "box-sizing": "border-box",
+                                  "padding-bottom": "10px"
+                                }
+                              },
+                              m("img", {
+                                src: "./img/headset.svg",
+                                alt: "Imagen 1",
+                                style: {
+                                  width: "40px",
+                                  height: "auto",
+                                  marginBottom: "8px"
+                                }
+                              })
                             ),
-                            m("a", { href: "https://www.instagram.com/correos/", title: "Instagram", target: "_blank" },
-                              m("img", { src: "./img/instagram.svg", alt: "Imagen 3", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
-                            ),
-                            m("a", { href: "https://x.com/correos", title: "Twitter", target: "_blank" },
-                              m("img", { src: "./img/twitter.svg", alt: "Imagen 4", style: { width: "30px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
-                            ),
-                            m("a", { href: "https://www.linkedin.com/company/correos/", title: "Linkedin", target: "_blank" },
-                              m("img", { src: "./img/linkedin.svg", alt: "Imagen 5", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
-                            ),
-                            m("a", { href: "https://www.youtube.com/user/CanalCorreos", title: "Youtube", target: "_blank" },
-                              m("img", { src: "./img/youtube.svg", alt: "Imagen 6", style: { width: "24px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
-                            )
+
+                          // XXXX
                           ]
                         )
-                      ]
-                    )
-                    
-                    
-                  ]
-                ),
-                m("div", {"style":{"box-sizing":"border-box"}}, 
-                  m("ul", {"style":{"box-sizing":"border-box","display":"flex","align-items":"center","width":"100%","margin-block":"0px","margin":"0px","padding":"0px","list-style":"outside none none"}},
-                    [
-                      m("li", {"style":{"box-sizing":"border-box","flex":"0 1 auto","margin-right":"24px"}}, 
-                        m("a", {"href":"https://www.facebook.com/correos.es","target":"_blank","title":"Ir a Ir a Facebook","aria-label":"Ir a Ir a Facebook","style":{"box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)","font-size":"24px"}}, 
-                          m("i", {"style":{"box-sizing":"border-box","display":"flex","justify-content":"center","align-items":"center","width":"1.5rem","height":"23.9844px","font-size":"24px","font-family":"correos-icons","font-weight":"400","font-style":"normal","font-variant":"normal","text-rendering":"auto","line-height":"24px","-webkit-font-smoothing":"antialiased"}})
-                        )
-                      ),
-                      m("li", {"style":{"box-sizing":"border-box","flex":"0 1 auto","margin-right":"24px"}}, 
-                        m("a", {"href":"https://www.instagram.com/correos/","target":"_blank","title":"Ir a Ir a Instagram","aria-label":"Ir a Ir a Instagram","style":{"box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)","font-size":"24px"}}, 
-                          m("i", {"style":{"box-sizing":"border-box","display":"flex","justify-content":"center","align-items":"center","width":"1.5rem","height":"23.9844px","font-size":"24px","font-family":"correos-icons","font-weight":"400","font-style":"normal","font-variant":"normal","text-rendering":"auto","line-height":"24px","-webkit-font-smoothing":"antialiased"}})
-                        )
-                      ),
-                      m("li", {"style":{"box-sizing":"border-box","flex":"0 1 auto","margin-right":"24px"}}, 
-                        m("a", {"href":"https://twitter.com/correos","target":"_blank","title":"Ir a Ir a Twitter","aria-label":"Ir a Ir a Twitter","style":{"box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)","font-size":"24px"}}, 
-                          m("i", {"style":{"box-sizing":"border-box","display":"flex","justify-content":"center","align-items":"center","width":"1.5rem","height":"23.9844px","font-size":"24px","font-family":"correos-icons","font-weight":"400","font-style":"normal","font-variant":"normal","text-rendering":"auto","line-height":"24px","-webkit-font-smoothing":"antialiased"}})
-                        )
-                      ),
-                      m("li", {"style":{"box-sizing":"border-box","flex":"0 1 auto","margin-right":"24px"}}, 
-                        m("a", {"href":"https://www.linkedin.com/company/correos/","target":"_blank","title":"Ir a Ir a Linkedin","aria-label":"Ir a Ir a Linkedin","style":{"box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)","font-size":"24px"}}, 
-                          m("i", {"style":{"box-sizing":"border-box","display":"flex","justify-content":"center","align-items":"center","width":"1.5rem","height":"23.9844px","font-size":"24px","font-family":"correos-icons","font-weight":"400","font-style":"normal","font-variant":"normal","text-rendering":"auto","line-height":"24px","-webkit-font-smoothing":"antialiased"}})
-                        )
-                      ),
-                      m("li", {"style":{"box-sizing":"border-box","margin-right":"0px","flex":"0 1 auto"}}, 
-                        m("a", {"href":"https://www.youtube.com/user/CanalCorreos","target":"_blank","title":"Ir a Ir a Youtube","aria-label":"Ir a Ir a Youtube","style":{"box-sizing":"border-box","color":"rgb(0, 46, 109)","text-decoration":"none solid rgb(0, 46, 109)","font-size":"24px"}}, 
-                          m("i", {"style":{"box-sizing":"border-box","display":"flex","justify-content":"center","align-items":"center","width":"1.5rem","height":"23.9844px","font-size":"24px","font-family":"correos-icons","font-weight":"400","font-style":"normal","font-variant":"normal","text-rendering":"auto","line-height":"24px","-webkit-font-smoothing":"antialiased"}})
-                        )
-                      )
-                    ]
-                  )
-                )
-              ]
-            )
-          ]
-        ),
 
+
+                      ]
+                    ),
+                    m(RedesSociales)
+                  ]
+                )
+
+                ])
+          ])
+        ))
       ]
-    )
-  )
-)
-    ]
+  }
+
+  function RedesSociales() {
+    return  {
+      view:()=>[
+
+        m("li",
+        {
+          "style": {
+            "box-sizing": "border-box",
+            "padding-bottom": "10px"
+          }
+        },
+        m("a",
+          {
+            "href": "/es/es/atencion-al-cliente",
+            "target": "_self",
+            "title": "Ir a Atención al cliente",
+            "style": {
+              "font-size": "16px",
+              "line-height": "24px",
+              "box-sizing": "border-box",
+              "color": "rgb(0, 46, 109)",
+              "text-decoration": "none",
+              "cursor": "pointer",
+            },
+            "onmouseover": (e) => e.target.style.textDecoration = "underline",
+            "onmouseout": (e) => e.target.style.textDecoration = "none"
+          },
+          "Atención al cliente"
+        )
+      ),
+
+      m("div",
+        {
+          "style": {
+            "display": "flex",
+            "gap": "25px",
+            "justify-content": "flex-start",
+          }
+        },
+
+        [
+
+          m("a", { href: "https://www.facebook.com/correos.es", title: "Facebook", target: "_blank" },
+            m("img", { src: "./img/facebook.svg", alt: "Imagen 2", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+          ),
+          m("a", { href: "https://www.instagram.com/correos/", title: "Instagram", target: "_blank" },
+            m("img", { src: "./img/instagram.svg", alt: "Imagen 3", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+          ),
+          m("a", { href: "https://x.com/correos", title: "Twitter", target: "_blank" },
+            m("img", { src: "./img/twitter.svg", alt: "Imagen 4", style: { width: "30px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+          ),
+          m("a", { href: "https://www.linkedin.com/company/correos/", title: "Linkedin", target: "_blank" },
+            m("img", { src: "./img/linkedin.svg", alt: "Imagen 5", style: { width: "20px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+          ),
+          m("a", { href: "https://www.youtube.com/user/CanalCorreos", title: "Youtube", target: "_blank" },
+            m("img", { src: "./img/youtube.svg", alt: "Imagen 6", style: { width: "24px", height: "auto", filter: "brightness(0) saturate(5%) invert(10%) sepia(80%) saturate(4794%) hue-rotate(179deg) brightness(96%) contrast(92%)" } })
+          )
+        ]
+      )
+      ]
+    }
   }
 }
 
